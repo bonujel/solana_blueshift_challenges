@@ -1,0 +1,18 @@
+[package]
+name = "pinocchio_escrow"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["lib", "cdylib"]
+
+[dependencies]
+pinocchio = "0.9"
+pinocchio-system = "0.4"
+pinocchio-token = "0.4"
+pinocchio-associated-token-account = "0.2"
+
+[profile.release]
+overflow-checks = true
+lto = "fat"
+codegen-units = 1
