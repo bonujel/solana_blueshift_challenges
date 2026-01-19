@@ -1,0 +1,16 @@
+[package]
+name = "blueshift_vault"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["lib", "cdylib"]
+
+[dependencies]
+pinocchio = "0.9"
+pinocchio-system = "0.4"
+
+[profile.release]
+overflow-checks = true
+lto = "fat"
+codegen-units = 1
